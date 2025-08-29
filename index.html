@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MF Auto Body</title>
+    <link rel="shortcut icon" href="img/TM AUTO AUTO BODY TRASPARENTE-Photoroom.png" type="icone carro">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #DF0000;
+            --accent: #1A1A1A;
+            --light: #f5f5f5;
+            --gray: #290F0F;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--light);
+            color: var(--primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            margin-left: 10px;
+        }
+
+        .logo span {
+            color: var(--secondary);
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            transition: width 0.3s;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/robert-laursoo-WHPOFFzY9gU-unsplash.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding-top: 70px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Sobre */
+        .about {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 3px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--accent);
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            flex: 1;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s;
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Serviços */
+        .services {
+            padding: 100px 0;
+            background-color: #f9f9f9;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 5px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--accent);
+        }
+
+        .service-card p {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+
+        /* Galeria */
+        .gallery {
+            padding: 100px 0;
+            background-color: white;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 250px;
+            overflow: hidden;
+            border-radius: 5px;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-item::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .gallery-item:hover::after {
+            opacity: 1;
+        }
+
+        /* Contato */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(to right, var(--primary) 50%, var(--accent) 50%);
+            color: white;
+        }
+
+        .contact-container {
+            display: flex;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0,0,0,0.2);
+        }
+
+        .contact-info {
+            flex: 1;
+            padding: 50px;
+            background: var(--primary);
+        }
+
+        .contact-form {
+            flex: 1;
+            padding: 50px;
+            background: var(--accent);
+        }
+
+        .contact-info h3, .contact-form h3 {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .contact-info h3::after, .contact-form h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background: var(--secondary);
+        }
+
+        .contact-item {
+            display: flex;
+            margin-bottom: 25px;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-right: 15px;
+            min-width: 30px;
+        }
+
+        .contact-text h4 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            background: rgba(255,255,255,0.1);
+            border-bottom: 2px solid rgba(255,255,255,0.3);
+            color: white;
+            font-size: 1rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-bottom-color: var(--secondary);
+        }
+
+        .form-group textarea {
+            height: 120px;
+            resize: none;
+        }
+
+        ::placeholder {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            color: var(--secondary);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary);
+            color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .copyright {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* Responsividade */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: var(--primary);
+                flex-direction: column;
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.show {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+                text-align: center;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+<body>
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="img/TM AUTO AUTO BODY TRASPARENTE PEQUENO.png" alt="">
+                <h1 class="">TM <span>AUTO BODY</span></h1>
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#gallery">Gallery</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu" id="mobileMenu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <section class="hero" id="home">
+        <div class="container hero-container">
+            <h2>style, reliability and modernity</h2>
+            <p>With 28 years of experience, TM AUTO BODY delivers mobile, professional repairs with guaranteed results. From wheel restoration to full custom paint jobs — we bring the shop to your door.</p>
+            <a href="#contact" class="btn">schedule time</a>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>With over 28 years of expertise,</h3>
+                    <p>TM AUTO BODY delivers mobile repair services with guaranteed results. Our goal is to combine quality craftsmanship with the convenience of bringing the shop directly to your door.</p>
+                    <p>From precision wheel restoration to complete custom paintwork, every service is performed with attention to detail and a commitment to excellence. We work to restore, enhance, and personalize your vehicle with professional care.</p>
+                    <p>At TM AUTO BODY, we believe every vehicle deserves the highest level of care. That’s why we use proven techniques, premium materials, and years of experience to ensure every repair or customization not only meets but exceeds industry standards.</p>
+                    <p>Trusted for decades, TM AUTO BODY stands for reliability, quality, and customer satisfaction. Wherever you are, we deliver lasting results and the confidence of knowing your vehicle is in expert hands.</p>
+                    <a href="#services" class="btn">Our Services</a>
+                </div>
+                <div class="about-image">
+                    <img src="img/pexels-alexey-makarov-1255860-2385881.jpg" alt="nossa Van de trabalho">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+                    <h3>Wheel Repairs</h3>
+                    <p>Eliminate curb rash, scratches, and dents with precision repairs that restore your wheels to a like-new finish.</p>
+                    <div class="price">R$27</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-air-freshener"></i>
+                    </div>
+                    <h3>General Painting</h3>
+                    <p>Whether it’s a small scratch needing a touch-up or a complete color change with a full respray, we deliver perfect results.</p>
+                    <div class="price">R$ 33</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-paint-roller"></i>
+                    </div>
+                    <h3>Custom Painting</h3>
+                    <p>Want a finish that's truly yours? From racing stripes to full custom designs, we bring our specialized paint services to you. Get a unique look without leaving home.</p>
+                    <div class="price">R$50</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                         <i class="fa-solid fa-car"></i>
+                    </div>
+                    <h3>Premium Products</h3>
+                    <p>We believe in doing a job once and doing it right. That's why we use only the highest-quality materials, guaranteeing a durable and flawless finish that stands the test of time.</p>
+                    <div class="price">R$60</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+                    <h3>Mobile Workshop</h3>
+                    <p>No need to schedule a drop-off or pick-up. We come to you, fully equipped to handle your car's repair with professional-grade tools and expertise, wherever you are.</p>
+                    <div class="price">R$80</div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-gift"></i>
+                    </div>
+                    <h3>Guaranteed Work </h3>
+                    <p>Get an estimate with no strings attached. We believe in transparent pricing and will provide a detailed quote before any work begins, so you know exactly what to expect. No hidden fees, ever.</p>
+                    <div class="price">R$120</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery" id="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>our gallery</h2>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/car-wheel-automobile-transportation-vehicle-spoke-1044097-pxhere.com.jpg" alt="Wheel of a white car">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/car-wheel-automobile-vehicle-spoke-auto-667835-pxhere.com.jpg" alt="Wheel of a black car">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/car-wheel-red-vehicle-spoke-auto-596057-pxhere.com.jpg" alt="Wheel of a red car">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/pexels-jeshoots-3658.jpg" alt="Wheel of a matte black car">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/pexels-pixabay-164643.jpg" alt="Wheel of an orange car">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/chris-nguyen-aTX_bRaOZnA-unsplash.jpg" alt="Wheel of a red sports car">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/chinmay-jade-XNN9C8MG4KM-unsplash.jpg" alt="Wheel of a white sports car">
+                </div>
+                <div class="gallery-item">
+                    <img src="img/vlad-grebenyev-7eCBiZgyr4E-unsplash (1).jpg" alt="Wheel of a lowered white sports car">
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <div class="modal">
+      <span class="close-button">&times;</span>
+      <img class="modal-content" id="img01">
+      <div id="caption"></div>
+    </div>
+    
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Service Area</h4>
+                            <p>[List states or cities]<br>São Paulo, SP</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Telephone</h4>
+                            <p>(11) 9999-8888</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p>contato@classicbarber.com.br</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Opening Hours</h4>
+                            <p>Mon-Fri: 9:00 - 19:00<br>Satur: 9:00 - 17:00<br>Sun: Fechado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Schedule an Appointment</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" placeholder="Your Phone" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Desired Service" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Appointment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="logo">
+                    <i class="fas fa-cut"></i>
+                    <h1>TM <span>AUTO BODY</span></h1>
+                </div>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/share/1EszAugSMM/"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.instagram.com/o_mldocorte?igsh=MWt0cjJydG5uM2c1OA=="><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://wa.me/+55"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy;2025 TM Auto Body. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Menu Mobile
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menu = document.getElementById('menu');
+        
+        mobileMenu.addEventListener('click', () => {
+            menu.classList.toggle('show');
+        });
+        
+        // Smooth Scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                if (menu.classList.contains('show')) {
+                    menu.classList.remove('show');
+                }
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
