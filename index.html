@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-        * {
+    * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
@@ -539,7 +539,7 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <img src="img/TM AUTO AUTO BODY TRASPARENTE PEQUENO.png" alt="">
+                <img src="img/logo tm auto body vermelho.png" alt="">
                 <h1 class="">TM <span>AUTO BODY</span></h1>
             </div>
             <nav>
@@ -563,6 +563,7 @@
             <p>With 28 years of experience, TM AUTO BODY delivers mobile, professional repairs with guaranteed results. From wheel restoration to full custom paint jobs — we bring the shop to your door.</p>
             <a href="#contact" class="btn">schedule time</a>
         </div>
+</button>
     </section>
 
     <section class="about" id="about">
@@ -598,7 +599,7 @@
                     </div>
                     <h3>Wheel Repairs</h3>
                     <p>Eliminate curb rash, scratches, and dents with precision repairs that restore your wheels to a like-new finish.</p>
-                    <div class="price">R$27</div>
+                    <div class="price"></div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -606,7 +607,7 @@
                     </div>
                     <h3>General Painting</h3>
                     <p>Whether it’s a small scratch needing a touch-up or a complete color change with a full respray, we deliver perfect results.</p>
-                    <div class="price">R$ 33</div>
+                    <div class="price"></div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -614,7 +615,7 @@
                     </div>
                     <h3>Custom Painting</h3>
                     <p>Want a finish that's truly yours? From racing stripes to full custom designs, we bring our specialized paint services to you. Get a unique look without leaving home.</p>
-                    <div class="price">R$50</div>
+                    <div class="price"></div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -622,7 +623,7 @@
                     </div>
                     <h3>Premium Products</h3>
                     <p>We believe in doing a job once and doing it right. That's why we use only the highest-quality materials, guaranteeing a durable and flawless finish that stands the test of time.</p>
-                    <div class="price">R$60</div>
+                    <div class="price"></div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -630,7 +631,7 @@
                     </div>
                     <h3>Mobile Workshop</h3>
                     <p>No need to schedule a drop-off or pick-up. We come to you, fully equipped to handle your car's repair with professional-grade tools and expertise, wherever you are.</p>
-                    <div class="price">R$80</div>
+                    <div class="price"></div>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
@@ -638,7 +639,7 @@
                     </div>
                     <h3>Guaranteed Work </h3>
                     <p>Get an estimate with no strings attached. We believe in transparent pricing and will provide a detailed quote before any work begins, so you know exactly what to expect. No hidden fees, ever.</p>
-                    <div class="price">R$120</div>
+                    <div class="price"></div>
                 </div>
             </div>
         </div>
@@ -695,7 +696,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Service Area</h4>
-                            <p>[List states or cities]<br>São Paulo, SP</p>
+                            <p>[Boston]<br>Massachusetts, USA </p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -713,7 +714,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Email</h4>
-                            <p>contato@classicbarber.com.br</p>
+                            <p>tmautobody@gmail.com</p>
                         </div>
                     </div>
                     <div class="contact-item">
@@ -722,7 +723,7 @@
                         </div>
                         <div class="contact-text">
                             <h4>Opening Hours</h4>
-                            <p>Mon-Fri: 9:00 - 19:00<br>Satur: 9:00 - 17:00<br>Sun: Fechado</p>
+                            <p>Mon-Fri: 9:00 - 19:00<br>Satur: 9:00 - 17:00<br>Sun: Close</p>
                         </div>
                     </div>
                 </div>
@@ -759,10 +760,10 @@
                     <h1>TM <span>AUTO BODY</span></h1>
                 </div>
                 <div class="social-links">
-                    <a href="https://www.facebook.com/share/1EszAugSMM/"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://www.instagram.com/o_mldocorte?igsh=MWt0cjJydG5uM2c1OA=="><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
                     <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="https://wa.me/+55"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="copyright">
@@ -770,30 +771,7 @@
             </div>
         </div>
     </footer>
-    
-    <script>
-        // Menu Mobile
-        const mobileMenu = document.getElementById('mobileMenu');
-        const menu = document.getElementById('menu');
-        
-        mobileMenu.addEventListener('click', () => {
-            menu.classList.toggle('show');
-        });
-        
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                if (menu.classList.contains('show')) {
-                    menu.classList.remove('show');
-                }
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+
+    <script src="script.js"></script>
 </body>
 </html>
