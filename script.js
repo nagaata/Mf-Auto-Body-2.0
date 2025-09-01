@@ -80,7 +80,7 @@
     const form = document.querySelector(".contact-form form");
     form.addEventListener("submit", (e) => {
         e.preventDefault(); // evita envio real
-        alert("✅ Sua solicitação foi enviada com sucesso! Entraremos em contato em breve.");
+        alert("✅ Your request has been sent successfully! We will contact you shortly.");
         form.reset();
 
 
